@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!--
+        	描述：这条语句是为了适应移动设备的
+        -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+		<style>
+			body {
+				padding-top: 50px;
+			}
+			
+			.carousel {
+				height: 500px;
+				background-color: #000;
+			}
+			
+			.carousel .item {
+				height: 500px;
+				background-color: #000;
+			}
+			
+			.carousel img {
+				width: 100%;
+			}
+			
+			.casousel-caption p {
+				margin-bottom: 20px;
+				font-size: 20px;
+				line-height: 1.8;
+			}
+			
+			#tag_container {
+				margin-top: 40px;
+			}
+			
+			#tag_container .col-md-4 {
+				text-align: center;
+			}
+			
+			hr .divider {
+				margin-top: 40px;
+			}
+			
+			.feature {
+				padding: 30px 0
+			}
+			
+			.feature-heading {
+				font-size: 50px;
+				color: #2a6496;
+				margin-top: 120px;
+			}
+			
+			.feature-heading .text-muted {
+				font-size: 28px;
+				color: #999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse ">
+			<div class="container">
+				<!--
+					下面的写法，为了适应手机等终端设备
+                -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          				<span class="sr-only">Toggle navigation</span>
+          				<span class="icon-bar"></span>
+          				<span class="icon-bar"></span>
+         				<span class="icon-bar"></span>
+       				 </button>
+					<a class="navbar-brand" href="#">test_demo</a>
+				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+						<li><a href="#">简述</a></li>
+						<!--在特点菜单下，增加额外的下单菜单
+                      -->
+						<li class="dropdown" id="demo-navbar"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">特点<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#an1">动物1</a></li>
+								<li><a href="#an2">动物2</a></li>
+								<li><a href="#an3">动物3</a></li>
+								<li><a href="#">动物4</a></li>
+							</ul>
+						</li>
+						<li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+		</nav>
+		<!--start Carousel 图片轮询组件
+			注：这里的data-ride的值不能为slide,应该为carousel否则不能自动播放
+		-->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img class="first-slide" src="img/1.jpg" alt="First slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Example1</h1>
+							<p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+							<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="second-slide" src="img/2.jpg" alt="Second slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>Another example2</h1>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<img class="third-slide" src="img/3.jpg" alt="Third slide">
+					<div class="container">
+						<div class="carousel-caption">
+							<h1>One more for good measure.</h1>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+							<p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<!--&lsaquo;左箭头,&rsaquo,右箭头，但是不需要，因为在bootstrap.css文件中，已经添加fonts-->
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">上一页</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">下一页</span>
+			</a>
+		</div>
+		<!--end Carousel-->
+
+		<div class="container" id="tag_container">
+			<div class="row">
+				<div class="col-md-4">
+					<img src="img/3.jpg" alt="animal1" width="200px" height="200px">
+					<h2>animal1</h2>
+					<p>林卡酒店刚说风寒看到个后面发的搜房大机构老夫林卡酒店刚说风寒看到个后面发的搜房大机构老夫林卡酒店刚说风寒看到个后面发的搜房大机构老夫</p>
+					<p><a href="#">click me</a></p>
+				</div>
+				<div class="col-md-4">
+					<img src="img/3.jpg" alt="animal1" width="200px" height="200px">
+					<h2>animal1</h2>
+					<p>林卡酒店刚说风寒看到个后面发的搜房大机构老夫</p>
+					<p><a href="#">click me</a></p>
+				</div>
+				<div class="col-md-4">
+					<img src="img/3.jpg" alt="animal1" width="200px" height="200px">
+					<h2>animal1</h2>
+					<p>林卡酒店刚说风寒看到个后面发的搜房大机构老夫</p>
+					<p><a href="#">click me</a></p>
+				</div>
+			</div>
+
+		</div>
+		<hr class="divider"></hr>
+
+		<div class="container">
+			<ul class="nav nav-tabs" role="tablist" id="an_tabs"> 
+				<li class="active"><a href="#an1" role="tab" data-toggle="tab">animal1</a></li>
+				<li><a href="#an2" role="tab" data-toggle="tab">animal2</a></li>
+				<li><a href="#an3" role="tab" data-toggle="tab">animal3</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="an1">
+					<div class="row feature">
+						<div class="col-md-7">
+							<h2 class="feature-heading">Animal1 <span class="text-muted">疯狂动物城</span></h2>
+							<p class="lead">ajdkgjfd咯见到噶是开发的价格啊的时间覅技术的飞机如果大使馆四国警方日结果的代价K歌人工吊丧irjeigrugitajdokgjijrgi</p>
+						</div>
+						<div class="col-md-5">
+							<img class="feature-image img-responsive" src="img/1.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="an2">
+					<div class="row feature">
+						<div class="col-md-7">
+							<h2 class="feature-heading">Animal2 <span class="text-muted">疯狂动物城</span></h2>
+							<p class="lead">ajdkgjfd咯见到噶是开发的价格啊的时间覅技术的飞机如果大使馆四国警方日结果的代价K歌人工吊丧irjeigrugitajdokgjijrgi</p>
+						</div>
+						<div class="col-md-5">
+							<img class="feature-image img-responsive" src="img/2.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="an3">
+					<div class="row feature">
+						<div class="col-md-7">
+							<h2 class="feature-heading">Animal3 <span class="text-muted">疯狂动物城</span></h2>
+							<p class="lead">ajdkgjfd咯见到噶是开发的价格啊的时间覅技术的飞机如果大使馆四国警方日结果的代价K歌人工吊丧irjeigrugitajdokgjijrgi</p>
+						</div>
+						<div class="col-md-5">
+							<img class="feature-image img-responsive" src="img/3.jpg">
+						</div>
+					</div>
+				</div>
+
+				<hr class="divider"></hr>
+
+				<footer>
+					<p class="pull-right"><a href="#top">回到顶部</a></p>
+					<p>@2016 rongyu制</p>
+				</footer>
+			</div>
+
+			<div class="modal fade" id="about">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title">关于</h4>
+						</div>
+						<div class="modal-body">
+							<p>《疯狂动物城》由迪士尼影业出品的3D动画片，由里奇·摩尔、拜恩·霍华德及杰拉德·布什联合执导，金妮弗·古德温、杰森·贝特曼、夏奇拉、艾伦·图代克、伊德瑞斯·艾尔巴、J·K·西蒙斯等加盟配音[1] 。</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">了解了</button>
+							<!--   <button type="button" class="btn btn-primary">Save changes</button> -->
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+
+			<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/carousel.js"></script>
+			<script>
+				$(document).ready(function() {
+					//$('#carousel-ad').carousel();
+					$("#demo-navbar .dropdown-menu a").click(function() {
+						var href = $(this).attr('href');
+						 //alert(href);
+						var a =$("#an_tabs a[href='" + href + "']");
+						//注意，不这里的show不能用""双引号，只能用''单引号
+						a.tab('show');
+						//alert(href);
+					});
+				});
+			</script>
+	</body>
+
+</html>
